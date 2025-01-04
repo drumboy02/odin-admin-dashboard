@@ -29,21 +29,44 @@ div > div {
 
 .sidebar {
     grid-area: sb;
+    background-color: #0ea5e9;
+    color: #f9fafb;
     border: 2px solid red;
     display: grid;
     grid-template-rows: 1fr 8fr;
 
     .nav {
         display: grid;
+        grid-auto-rows: 250px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #f9fafb;
     }
 }
+
 .header {
     grid-area: hd;
+    background-color: #f9fafb;
     border: 2px solid green;
     display: grid;
+    grid-template-rows: 2fr 3fr;
+
+    .searchbar {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .user {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+    }
 }
+
 .main-content {
     grid-area: mn;
+    background-color: #d1d5db;
     border: 2px solid blue;
     display: grid;
     grid-template-rows: 1fr 1fr;
