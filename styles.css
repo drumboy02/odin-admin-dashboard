@@ -71,14 +71,38 @@ div > div > div {
     display: grid;
     grid-template-rows: 2fr 3fr;
 
+    input,
+    button {
+        appearance: none;
+        border: 0;
+        font-size: inherit;
+        font-family: inherit;
+    }
+
     .searchbar {
         display: grid;
         grid-template-columns: 4fr 2fr;
+
+        & input {
+            background-color: var(--gray);
+            border-radius: 16px;
+            width: 80%;
+            padding: 3px;
+            margin: 12px;
+        }
     }
 
     .user {
         display: grid;
         grid-template-columns: 3fr 2fr;
+
+        & button {
+            background-color: var(--blue);
+            color: var(--white);
+            padding: 8px 0px;
+            width: 96px;
+            border-radius: 16px;
+        }
     }
 }
 
