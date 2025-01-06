@@ -29,7 +29,7 @@ body {
 }
 
 /* temporary div borders */
-div {
+/* div {
     border: 1px dashed #000;
     margin: 2px;
 }
@@ -42,7 +42,7 @@ div > div {
 div > div > div {
     border: 1px dashed yellow;
     margin: 2px;
-}
+} */
 /* end  */
 
 .sidebar {
@@ -181,4 +181,16 @@ div > div > div {
             }
         }
     }
+}
+
+.svg-white {
+    width: 20px;
+    height: 20px;
+    fill: var(--white);
+}
+
+.svg-dash {
+    width: 40px;
+    height: 40px;
+    fill: var(--white);
 }
