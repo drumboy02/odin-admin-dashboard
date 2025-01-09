@@ -5,13 +5,20 @@
 }
 
 :root {
+    /* colors */
     --blue: #0ea5e9;
     --white: #f9fafb;
     --gray: #d1d5db;
     --yellow: #fbbf24;
+
+    /* padding/borders/margins */
     --bottom-margin: 4vh;
     --right-margin: 2vh;
     --rounded-borders: 8px;
+    --sb-left-space: 1.2rem;
+    --card-padding: 18px;
+
+    /* font */
     font-size: 16px;
     color: #000;
     --secondary-font: #6b7280;
@@ -19,7 +26,7 @@
 }
 
 body {
-    min-width: 100vw;
+    max-width: 100vw;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -30,7 +37,7 @@ body {
 }
 
 /* temporary div borders */
-/* div {
+div {
     border: 1px dashed #000;
     margin: 2px;
 }
@@ -41,9 +48,9 @@ div > div {
 }
 
 div > div > div {
-    border: 1px dashed yellow;
+    border: 1px dashed orange;
     margin: 2px;
-} */
+}
 /* end  */
 
 .sidebar {
@@ -52,15 +59,35 @@ div > div > div {
     color: var(--white);
     font-size: 1.3rem;
     display: grid;
-    grid-template-rows: 1fr 8fr;
+    grid-template-rows: 1fr 7fr;
 
     .logo {
         font-size: 1.65rem;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        align-content: start;
+        align-items: center;
+        padding-left: 0.8rem;
+        padding-top: 0.8rem;
     }
 
     .nav {
         display: grid;
         grid-auto-rows: 2fr 3fr;
+
+        & .menu-1 li {
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            margin-bottom: 1rem;
+            margin-left: var(--sb-left-space);
+        }
+
+        & .menu-2 li {
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            margin-bottom: 1rem;
+            margin-left: var(--sb-left-space);
+        }
     }
 
     a {
@@ -86,13 +113,34 @@ div > div > div {
     .searchbar {
         display: grid;
         grid-template-columns: 4fr 2fr;
+        align-items: center;
 
-        & input {
-            background-color: var(--gray);
-            border-radius: 16px;
-            width: 80%;
-            padding: 3px;
-            margin: 12px;
+        & .search-container {
+            padding: 5px 0px;
+            margin-left: 32px;
+
+            & label {
+                /* this won't align */
+                align-self: end;
+                margin: 10px;
+            }
+
+            & input {
+                background-color: var(--gray);
+                border-radius: 16px;
+                width: 80%;
+                padding: 3px;
+            }            
+        }
+    }
+
+    .user-info-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 3fr;
+        align-items: center;
+
+        & svg {
+            margin-left: 32px;
         }
     }
 
@@ -100,12 +148,24 @@ div > div > div {
         display: grid;
         grid-template-columns: 3fr 2fr;
 
-        & button {
-            background-color: var(--blue);
-            color: var(--white);
-            padding: 8px 0px;
-            width: 96px;
-            border-radius: 16px;
+        & .user-info-2 {
+            display: flex;
+        }
+
+
+        & .btn-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-content: center;
+            justify-items: center;
+
+            & button {
+                background-color: var(--blue);
+                color: var(--white);
+                padding: 8px 0px;
+                width: 96px;
+                border-radius: 16px;
+            }
         }
     }
 }
@@ -133,11 +193,13 @@ div > div > div {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 18px;
+            padding-left: 14px;
 
             & .card {
                 background-color: var(--white);
                 border-left: 7px solid var(--yellow);
                 border-radius: var(--rounded-borders);
+                padding: var(--card-padding);
             }
 
             & .card p {
@@ -155,6 +217,7 @@ div > div > div {
         & .announcement-container {
             background-color: var(--white);
             border-radius: var(--rounded-borders);
+            padding: var(--card-padding);
         }
 
         & h2 {
@@ -177,6 +240,7 @@ div > div > div {
         & .trending-container {
             background-color: var(--white);
             border-radius: var(--rounded-borders);
+            padding: var(--card-padding);
             display: grid;
 
             & p {
@@ -190,6 +254,11 @@ div > div > div {
     width: 20px;
     height: 20px;
     fill: var(--white);
+}
+
+.svg {
+    width: 24px;
+    height: 24px;
 }
 
 .svg-dash {
