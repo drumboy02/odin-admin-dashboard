@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -17,10 +19,11 @@
     --right-margin: 20px;
     --rounded-borders: 8px;
     --sb-left-space: 1.2rem;
-    --card-padding: 18px;
+    --card-padding: 22px;
     --header-padding: 10px;
 
     /* font */
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     color: #000;
     --secondary-font: #6b7280;
@@ -37,23 +40,6 @@ body {
                          'sb hd'
                          'sb mn';
 }
-
-/* temporary div borders */
-/* div {
-    border: 1px dashed #000;
-    margin: 2px;
-}
-
-div > div {
-    border: 1px dashed #f00;
-    margin: 2px;
-}
-
-div > div > div {
-    border: 1px dashed orange;
-    margin: 2px;
-} */
-/* end  */
 
 .sidebar {
     grid-area: sb;
@@ -155,7 +141,7 @@ div > div > div {
 
         & span {
             font-size: 1.15rem;
-            font-weight: 900;
+            font-weight: 700;
         }
     }
 
@@ -169,7 +155,7 @@ div > div > div {
             padding-left: 34px;
 
             & .user-text {
-                font-weight: 900;
+                font-weight: 700;
                 padding-left: 20px;
 
                 & p {
@@ -216,7 +202,8 @@ div > div > div {
     gap: 20px 14px;
 
     h1 {
-        font-size: 1.25rem
+        font-size: 1.25rem;
+        font-weight: 600;
     }
 
     .projects {
@@ -235,7 +222,7 @@ div > div > div {
         & .card-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px 20px;
+            gap: 24px 13px;
 
             & .card {
                 background-color: var(--white);
@@ -247,6 +234,7 @@ div > div > div {
 
                 & h1 {
                     align-self: end;
+                    line-height: 1.3;
                     padding-bottom: 0;
                 }
 
@@ -262,6 +250,7 @@ div > div > div {
 
             & .card p {
                 color: var(--secondary-font);
+                align-self: start;
             }
         }
     }
@@ -328,6 +317,10 @@ div > div > div {
                 grid-template-columns: 1fr 3fr;
                 align-items: center;
                 cursor: pointer;
+
+                & .trending-text {
+                    padding-left: 8px;
+                }
             }
 
             & p {
