@@ -10,6 +10,7 @@
     --white: #f9fafb;
     --gray: #d1d5db;
     --yellow: #fbbf24;
+    --box-shadows: 2px 3px 2px #bbb;
 
     /* padding/borders/margins */
     --bottom-margin: 50px;
@@ -17,6 +18,7 @@
     --rounded-borders: 8px;
     --sb-left-space: 1.2rem;
     --card-padding: 18px;
+    --header-padding: 10px;
 
     /* font */
     font-size: 16px;
@@ -37,7 +39,7 @@ body {
 }
 
 /* temporary div borders */
-div {
+/* div {
     border: 1px dashed #000;
     margin: 2px;
 }
@@ -50,7 +52,7 @@ div > div {
 div > div > div {
     border: 1px dashed orange;
     margin: 2px;
-}
+} */
 /* end  */
 
 .sidebar {
@@ -69,11 +71,12 @@ div > div > div {
         align-items: center;
         padding-left: 0.8rem;
         padding-top: 0.8rem;
+        padding-right: 0.8rem;
     }
 
     .nav {
         display: grid;
-        grid-auto-rows: 2fr 3fr;
+        grid-auto-rows: 1fr 2fr;
 
         & .menu-1 li {
             display: grid;
@@ -93,12 +96,19 @@ div > div > div {
     a {
         text-decoration: none;
         color: var(--white);
+
+        &:hover {
+            color: var(--gray);
+            text-shadow: 2px 1px #000;
+        }
     }
 }
 
 .header {
     grid-area: hd;
     background-color: var(--white);
+    box-shadow: 3px 4px 4px #bbb;
+    z-index: 1;
     display: grid;
     grid-template-rows: 2fr 3fr;
 
@@ -140,7 +150,12 @@ div > div > div {
         align-items: center;
 
         & svg {
-            margin-left: 32px;
+            margin-left: 24px;
+        }
+
+        & span {
+            font-size: 1.15rem;
+            font-weight: 900;
         }
     }
 
@@ -151,6 +166,20 @@ div > div > div {
 
         & .user-info-2 {
             display: flex;
+            padding-left: 34px;
+
+            & .user-text {
+                font-weight: 900;
+                padding-left: 20px;
+
+                & p {
+                    line-height: 2;
+                }
+
+                & span {
+                    font-size: 1.45rem;
+                }
+            }
         }
 
 
@@ -159,13 +188,20 @@ div > div > div {
             grid-template-columns: 1fr 1fr 1fr;
             align-content: center;
             justify-items: center;
+            max-width: 400px;
 
             & button {
+                cursor: pointer;
                 background-color: var(--blue);
                 color: var(--white);
                 padding: 8px 0px;
                 width: 96px;
                 border-radius: 16px;
+                box-shadow: 1px 1px var(--gray);
+
+                &:hover {
+                    opacity: 0.8;
+                }
             }
         }
     }
@@ -180,7 +216,7 @@ div > div > div {
     gap: 20px 14px;
 
     h1 {
-        font-size: 1.35rem
+        font-size: 1.25rem
     }
 
     .projects {
@@ -193,19 +229,26 @@ div > div > div {
 
         h1 {
             align-self: end;
+            padding-bottom: var(--header-padding);
         }
 
         & .card-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 18px;
+            gap: 24px 20px;
 
             & .card {
                 background-color: var(--white);
+                box-shadow: var(--box-shadows);
                 border-left: 7px solid var(--yellow);
                 border-radius: var(--rounded-borders);
                 padding: var(--card-padding);
                 display: grid;
+
+                & h1 {
+                    align-self: end;
+                    padding-bottom: 0;
+                }
 
                 & .icon-container {
                     align-self: end;
@@ -231,10 +274,12 @@ div > div > div {
 
         h1 {
             align-self: end;
+            padding-bottom: var(--header-padding);
         }
 
         & .announcement-container {
             background-color: var(--white);
+            box-shadow: var(--box-shadows);
             border-radius: var(--rounded-borders);
             padding: var(--card-padding);
             align-content: center;
@@ -268,16 +313,21 @@ div > div > div {
 
         h1 {
             align-self: end;
+            padding-bottom: var(--header-padding);
         }
 
         & .trending-container {
             background-color: var(--white);
+            box-shadow: var(--box-shadows);
             border-radius: var(--rounded-borders);
             padding: var(--card-padding);
+            display: grid;
 
             & .user-link {
                 display: grid;
                 grid-template-columns: 1fr 3fr;
+                align-items: center;
+                cursor: pointer;
             }
 
             & p {
@@ -296,6 +346,7 @@ div > div > div {
 .svg {
     width: 24px;
     height: 24px;
+    cursor: pointer;
 }
 
 .svg-dash {
